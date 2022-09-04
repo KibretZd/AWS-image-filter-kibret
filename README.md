@@ -1,4 +1,4 @@
-#My Assignment for  project 2
+# My Assignment for  project 2: Udagram
 
 ## Application name: 
     image-filter-kibret
@@ -11,4 +11,3 @@
 
 ## My project source code on Github
     https://github.com/KibretZd/AWS-image-filter-kibret.git
-    
