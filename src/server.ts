@@ -34,10 +34,13 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     if(!image_url) {
       return res.status(400).send(`Image url is required!`);
     }
-
-    const filteredpath = await filterImageFromURL(image_url);
+    try{
+      const filteredpath = await filterImageFromURL(image_url);
+      res.status(200).sendFile(filteredpath,()=>{deleteLocalFiles([filteredpath])});
+    } catch (e){
+      res.send(e);
+    }
     
-    res.status(200).sendFile(filteredpath,()=>{deleteLocalFiles([filteredpath])});
   });
   //! END @TODO1
   
