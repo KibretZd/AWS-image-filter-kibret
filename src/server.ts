@@ -37,7 +37,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     try{
       const filteredpath = await filterImageFromURL(image_url);
       res.status(200).sendFile(filteredpath,()=>{deleteLocalFiles([filteredpath])});
-    } catch (e:any){
+    } catch (e){
       res.send(e);
     }
     
